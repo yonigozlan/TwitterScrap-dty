@@ -1,0 +1,113 @@
+$primary: #00acee;
+
+
+.note{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    margin-left: 30%;
+    margin-right: 0;
+}
+
+.jumbMap{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.jumbTrends{
+    text-align: center;
+    padding: 5px 3px 3px 0px;
+    margin: 0;
+    background-color: white;
+}
+// .jumbTrends hr {
+//     margin-top: 0;
+//     padding-top: 0;
+// }
+.cardContainer{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.worldFrance{
+    padding-top: 5px;
+}
+
+.worldFrance ul li a{
+    color: $primary;
+}
+.worldFrance ul li a:hover, .worldFrance:focus, .worldFrance:active, .worldFrance.active, .open .dropdown-toggle.worldFrance { 
+    color: darken($primary, 10);
+    
+}    
+
+
+.mapContainer {
+    height: 650px;
+    max-width: 700px;
+    max-width: 70%;
+    margin: 50px auto;
+}
+
+.selectTrend a span{
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+}
+
+.colLeft{
+    max-height: 700px;
+    overflow-y: scroll;
+
+}
+
+.headerTweets{
+    
+    margin-top: 0px;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+
+.headerTweets ul li a:not(.active){
+    color: $primary;
+    background-color: white;
+
+}
+
+
+.headerTweets ul li a.active{
+    color: white;
+    background-color: $primary;
+
+}
+
+.headerTweets ul li a:hover { 
+    color: darken($primary, 10);
+}
+
+.headerTweets ul li a.active:hover{
+    background-color: $primary;
+    color: white;
+}
+
+.btnTweets{
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.searchTab{
+    text-align: center;
+}
+
+.btnTweets:hover, .btnTweets:focus, .btnTweets:active, .btnTweets.active, .open .dropdown-toggle.btnTweets {
+    background-color: darken($primary, 5);
+    color:#FFF;
+}    

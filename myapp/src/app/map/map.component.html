@@ -1,0 +1,86 @@
+
+<div class="card cardContainer">
+    <div class = "row">
+        <div class="col-md-12">
+            <div class="card-header worldFrance">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="world-tab" data-toggle="tab" href="#world" role="tab" aria-controls="world" aria-selected="true" (click) = "getTwitterTrendsMap('world')">World</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="france-tab" data-toggle="tab" href="#france" role="tab" aria-controls="france" aria-selected="false" (click) = "getTwitterTrendsMap('france')">France</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="search" aria-selected="false">Search</a>
+                    </li>
+                  </ul>
+                </div>
+        </div>
+    </div>
+    
+<div class = "row">
+    
+    <div class="col-md-3 colLeft">
+        
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="world" role="tabpanel" aria-labelledby="world-tab">
+                <div class="card-body">    
+        <div class="jumbTrends font-weight-light">
+            <h5>  Trending around the world : </h5>
+            <hr>
+          </div>
+        <div class="nav flex-column nav-pills selectTrend headerTweets" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <ul class="nav flex-column nav-pills selectTrend" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                    <li class="nav-item " *ngFor="let trend of trends ; let i = index">
+                        <a [attr.id]="'trend' + i" class="nav-link " data-toggle="pill" href="#" [attr.aria-labelledby]="'tweet' + i"  [attr.aria-selected]="false" (click) = "getTweets(trend, $event)"><span>{{trend}}</span></a>
+                    </li>
+              </ul>
+                <!-- <div [attr.id]="'div' + i" >
+                <a [attr.id]="'trend' + i" class="nav-link" data-toggle="pill" href="#" [attr.aria-labelledby]="'tweet' + i"  [attr.aria-selected]="false" (change) = "getTweets(trend, $event)"><span>{{trend}}</span></a>
+            </div> -->
+        </div>
+        </div>
+            </div>
+            <div class="tab-pane fade show" id="france" role="tabpanel" aria-labelledby="france-tab">
+                <div class="card-body"> 
+                    <div class=" card-title jumbTrends font-weight-light">
+                        <h5>  Trending in France : </h5>
+                        <hr>
+                      </div>
+                    <div class="nav flex-column nav-pills selectTrend headerTweets" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <ul class="nav flex-column nav-pills selectTrend" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
+                                <li class="nav-item " *ngFor="let trend of trends ; let i = index">
+                                    <a [attr.id]="'trend' + i" class="nav-link " data-toggle="pill" href="#" [attr.aria-labelledby]="'tweet' + i"  [attr.aria-selected]="false" (click) = "getTweets(trend, $event)"><span>{{trend}}</span></a>
+                                </li>
+                          </ul>
+                            <!-- <div [attr.id]="'div' + i" >
+                            <a [attr.id]="'trend' + i" class="nav-link" data-toggle="pill" href="#" [attr.aria-labelledby]="'tweet' + i"  [attr.aria-selected]="false" (change) = "getTweets(trend, $event)"><span>{{trend}}</span></a>
+                        </div> -->
+                    </div>  
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="search" role="tabpanel" aria-labelledby="search-tab">
+                <div class="card-body searchTab"> 
+                    <div class=" card-title jumbTrends font-weight-light">
+                        <h5>  Search a trend : </h5>
+                        <hr>
+                    </div>
+                        <form (ngSubmit)="getTweets(trendSearch, $event)">
+                        <div class="form-group scrapForm" mx-sm-3 mb-2>
+                          <input type="text" class="form-control" id="trendSearch" placeholder="Enter trend/key word" name=trendSearch [(ngModel)]="trendSearch">
+                        </div>
+                      <button type="submit" class="btn btn-primary btnTweets">Search</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 mapContainer" id="map">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    </div>
+</div>
+<div class="note"> <i>Very few users share their location with Twitter. Consequently, the numbers shown aren't reprentative of the total number of tweets for this trend.</i></div>
+
+</div>

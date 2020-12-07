@@ -1,0 +1,96 @@
+
+$primary: #00acee;
+
+
+.tweets_container{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.headerTweets ul li a{
+    color: $primary;
+}
+.headerTweets ul li a:hover, .headerTweets:focus, .headerTweets:active, .headerTweets.active, .open .dropdown-toggle.headerTweets { 
+    color: darken($primary, 10);
+    
+}    
+
+.btnCollapse{
+    text-decoration: none;
+    color: $primary;
+
+}
+
+.btnCollapse:hover, .btnCollapse:focus, .btnCollapse:active, .btnCollapse.active, .open .dropdown-toggle.btnCollapse { 
+    text-decoration: none;
+    color: darken($primary, 10);
+}  
+
+.scrollableMenu {
+    max-height: 300px;
+    overflow-x: hidden;
+}
+
+.trendingCards{
+    width: 70%;
+    margin: 20px auto;
+
+}
+
+.selectCountryMenu{
+    max-width: 400px;
+    margin: 20px auto 20px auto;
+}
+
+.jumbTrends{
+    text-align: center;
+    padding: 5px 3px 3px 0px;
+    margin: 0;
+    background-color: white;
+}
+
+.scrapForm{
+    max-width: 400px;
+    margin: 20px auto 20px auto;
+}
+.btnTweets{
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.btnTweets:hover, .btnTweets:focus, .btnTweets:active, .btnTweets.active, .open .dropdown-toggle.btnTweets {
+    background-color: darken($primary, 5);
+    color:#FFF;
+}    
+
+.userName{
+    color: $primary;
+    float: left;
+}
+
+.userLocation{
+    color: gray;
+    }
+.tweetDate{
+    color: gray;
+    float: right;
+}
+.tweetBody{
+    margin-top: 0px;
+}
+
+.tweetsInTrend{
+    width: 70%;
+    margin: 20px auto;
+    text-align: left;;
+}
+
+@media (max-width: 600px) {
+    .trendingCards {
+    width: 95%;
+    
+    }
+    .tweetsInTrend{
+        width: 90%;
+    }
+  }
