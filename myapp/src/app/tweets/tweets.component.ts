@@ -33,8 +33,6 @@ export class TweetsComponent implements OnInit {
         
         if(this.api.sockets[trend] !== undefined){
           this.api.sockets[trend].emit("stop", trend);
-        //   console.log("closed socket")
-        //   this.api.sockets[trend].close();
         }
       }
     }
@@ -49,21 +47,17 @@ export class TweetsComponent implements OnInit {
       
       if(this.api.sockets[trend] !== undefined){
         this.api.sockets[trend].emit("stop", trend);
-      //   console.log("closed socket")
-      //   this.api.sockets[trend].close();
       }
     }
   }
   
   selectChangeHandler (event: any) {
-    //update the ui
     this.selectedCountry = event.target.value;
   }
 
   ngOnInit() {
     this.tweetsTrend = {};
     this.checked = {};
-    // this.getTwitterTrends();
     
   }
 
@@ -98,7 +92,6 @@ export class TweetsComponent implements OnInit {
     if (e.target.checked){
       this.uncheckAllOther(trend);
       console.log("called");
-      // this.tweetsTrend = [];
       console.log("trend = " + trend);
       this.api.sockets[trend].emit("trend", trend);
       this.api.sockets[trend].on('tweet', (data: any) => {
@@ -123,24 +116,6 @@ export class TweetsComponent implements OnInit {
     }
 
    }
-   
-  // getTwitterTrends(): void {
-  //   this.api.getTrends()
-  //     .subscribe(
-  //       trends => {
-  //         this.trends = trends[0].trends;
-  //         console.log(trends.length);
-  //         console.log(typeof(trends));
-  //         this.trends.forEach(myFunction); 
-  //         function myFunction(item : any) 
-  //         { 
-  //             console.log(item.name);
-              
-  //         }
-
-  //       }
-  //     )
-  //  }
 
    getTwitterTrendsCountry(selectedCountry : any): void {
     this.api.getTrends(selectedCountry)
@@ -154,8 +129,7 @@ export class TweetsComponent implements OnInit {
           function myFunction(item : any) 
           { 
               trendsName.unshift(item.name);
-              console.log("name : "+ item.name);
-              
+              console.log("name : "+ item.name);  
           }
           this.trendsName = trendsName;
           console.log(trendsName)
